@@ -1,3 +1,11 @@
+import { clsx } from "clsx";
+import { Home, LineChart, Package, ShoppingCart, Users } from 'lucide-vue-next';
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+
 export const formatCurrency = (amount) => {
   return (amount / 100).toLocaleString('en-US', {
     style: 'currency',
@@ -54,3 +62,31 @@ export const generatePagination = (currentPage, totalPages) => {
     totalPages,
   ];
 };
+
+export const navItems = [
+  {
+    title: 'Blind Details',
+    link: '/details',
+    icon: () => h(Home, { class: "h-4 w-4" }),
+  },
+  {
+    title: 'Licensee Accounts',
+    link: '/accounts',
+    icon: () => h(ShoppingCart, { class: "h-4 w-4" }),
+  },
+  {
+    title: 'Law Enforcement',
+    link: '/enforcements',
+    icon: () => h(Package, { class: "h-4 w-4" }),
+  },
+  {
+    title: 'Announcement',
+    link: '/announcement',
+    icon: () => h(Users, { class: "h-4 w-4" }),
+  },
+  {
+    title: 'Settings',
+    link: '/settings',
+    icon: () => h(LineChart, { class: "h-4 w-4" }),
+  }
+];

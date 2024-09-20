@@ -104,7 +104,7 @@ const popoverHandle = (id) => {
 </script>
 
 <template>
-  <main>
+  <main class="flex flex-1 flex-col">
     <div class="mb-5 flex justify-between items-center">
       <div class="flex justify-between items-center gap-2">
         <Input

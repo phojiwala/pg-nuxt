@@ -40,7 +40,7 @@ import { Input } from "@/components/ui/input";
       >
         <NavMobile />
         <div class="w-full flex-1 flex items-center">
-          <h1 class="text-lg font-semibold md:text-2xl">Inventory</h1>
+          <h1 class="text-lg font-semibold md:text-2xl">Blinds</h1>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger as-child>

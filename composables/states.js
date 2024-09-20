@@ -19,7 +19,7 @@ export const store = reactive({
   open: false,
   dialogs: {},
   popovers: {},
-  dashboard: createStoreObject(),
+  blinds: createStoreObject(),
   accounts: createStoreObject(),
 });
 

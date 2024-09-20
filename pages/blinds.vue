@@ -13,6 +13,8 @@ const cols = [
   { field: "license_status", title: "License Status" },
   { field: "actions", title: "", sort: false },
 ];
+
+// const blinds = await fetchFilteredBlinds(query, currentPage);
 </script>
 
 <template>

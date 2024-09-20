@@ -1,5 +1,21 @@
 import { sql } from '@vercel/postgres';
 import { formatCurrency } from './utils';
+import { revalidatePath } from 'nuxt/app';
+
+export async function createBlind(formData) {
+  const rawFormData = Object.fromEntries(formData.entries())
+  try {
+    await sql`
+      INSERT INTO invoices (customer_id, amount, status, date)
+      VALUES (${rawFormData.customerId}, ${rawFormData.amount * 100}, ${rawFormData.status
+      }, ${new Date().toISOString().split('T')[0]})
+    `
+    revalidatePath('/blinds')
+    // redirect('/ui/dashboard/invoices');
+  } catch (error) {
+    console.error('Error creating invoice:', error);
+  }
+}
 
 export async function fetchRevenue() {
   try {
@@ -12,7 +28,7 @@ export async function fetchRevenue() {
   }
 }
 
-export async function fetchLatestInvoices() {  
+export async function fetchLatestInvoices() {
   try {
     const data = await sql`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id

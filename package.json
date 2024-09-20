@@ -4,16 +4,16 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --port 3002",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@bhplugin/vue3-datatable": "^1.1.4",
     "@nuxtjs/color-mode": "^3.5.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@radix-icons/vue": "^1.0.0",
-    "@tanstack/vue-table": "^8.20.5",
     "@vercel/postgres": "^0.10.0",
     "@vueuse/core": "^11.1.0",
     "class-variance-authority": "^0.7.0",

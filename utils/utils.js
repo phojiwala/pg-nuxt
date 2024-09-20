@@ -66,7 +66,7 @@ export const generatePagination = (currentPage, totalPages) => {
 export const navItems = [
   {
     title: 'Blind Details',
-    link: '/details',
+    link: '/blinds',
     icon: () => h(Home, { class: "h-4 w-4" }),
   },
   {
